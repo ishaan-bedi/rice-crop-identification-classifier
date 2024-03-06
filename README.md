@@ -6,13 +6,14 @@ The Rice Crop Discovery Tool is a project that combines satellite data from Sent
 
 ## Project Structure
 
-### 1. Extract_Load.ipynb
+### 1. Load_PredictionData.ipynb and Load_TrainData.ipynb
 
 #### Purpose:
 
 - **Environment Setup**: Import necessary packages and set up the Planetary Computer API key.
 - **Data Collection**: Retrieve rice crop presence data for the year 2020 from a defined region in Vietnam.
 - **Sentinel-1 Data Retrieval**: Extract VV and VH band values for a specific location and time frame, essential for predicting rice crop presence.
+- **Feature Engineering**: Measure phenology (growth) of rice crops by using statistical combinations of these bands to generate RVI (Radar Vegetation Index).
 - **Data Combination**: Merge response (crop presence) and predictor variables (VV, VH) into a unified dataset.
 - **Data Storage**: Save the combined dataset for further processing.
 
@@ -28,12 +29,6 @@ The Rice Crop Discovery Tool is a project that combines satellite data from Sent
 - **In-Sample Evaluation**: Assess model performance on the training dataset through classification reports and confusion matrices.
 - **Out-Sample Evaluation**: Predict on the test set to evaluate model generalization, providing accuracy metrics.
 
-### 3. ML Hyperparameter Tuning (commented section in ML_Processing.ipynb)
-
-#### Purpose:
-
-- **Hyperparameter Tuning**: Implement RandomizedSearchCV for optimizing hyperparameters of the Random Forest model.
-
 ## Usage
 
 ### Prerequisites
@@ -43,7 +38,7 @@ The Rice Crop Discovery Tool is a project that combines satellite data from Sent
 
 ### Instructions
 
-1. **Data Preparation**: Execute "Extract_Load.ipynb" to collect and prepare the necessary data.
+1. **Data Preparation**: Execute "Load_PredictionData.ipynb" and "Load_TrainData.ipynb" to collect and prepare the necessary data.
 2. **Modeling and Evaluation**: Proceed to "ML_Processing.ipynb" for machine learning model development and evaluation.
 
 Refer to the notebook comments for additional tips and insights during execution.
